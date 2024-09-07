@@ -6,11 +6,27 @@ const GlobalStyles = createGlobalStyle`
             box-sizing: border-box;
             color: white;
             font-family: "SUSE", sans-serif;
+            cursor: default;
+            user-select: none;
       }
 
       :root {
             overflow-x: hidden;
             overflow-y: hidden;
+
+            ::-webkit-scrollbar-track {
+            background: none;  
+            }
+
+            ::-webkit-scrollbar {
+            width: 8px;
+            background-color: none; 
+            }
+
+            ::-webkit-scrollbar-thumb {
+            background-color: #7a7a7a;
+            border-radius: 20px;
+            }
       }
 
       body {

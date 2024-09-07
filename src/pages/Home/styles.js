@@ -5,7 +5,7 @@ export const Container = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 10px;
+      padding: 0 15px 15px 15px;
       height: 100vh;
       width: 100vw;
 `
@@ -27,31 +27,37 @@ export const Title = styled.h4`
 
 export const MainFrame = styled.div`
   width: 100%;
-  height: 95%;
+  max-height: 85%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding-right: 8px;
-  gap: 5px;
+  gap: 10px;
 
-  overflow-y: scroll;
+  overflow-y: auto;
 
-  ::-webkit-scrollbar {
-    width: 8px;   
-    background: none;  
-
-  }
-
-  ::-webkit-scrollbar-track {
-    background: none;  
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: #d3d3d350;    
-    border-radius: 20px;
-  }
 `
 
 export const Apps = styled.div`
-      background-color: #7a7a7a;
+      /* background-color: #7a7a7a; */
       aspect-ratio: 4 / 4;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+
+      transition: .05s all ease;
+
+      &:hover {
+        background-color: rgba(110, 180, 255, .3);
+      }
+`
+
+export const AppIcon = styled.img`
+width: 50%;
+`
+
+export const AppName = styled.h5`
+  text-align: center;
+  font-weight: normal;
 `

@@ -55,10 +55,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 450,
-        "resizable": false,
+        "height": 440,
         "transparent": true,
         "decorations": false,
+        "resizable": false,
         "title": "apphub",
         "width": 405
       }
