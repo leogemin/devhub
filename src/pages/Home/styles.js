@@ -10,21 +10,6 @@ export const Container = styled.div`
       width: 100vw;
 `
 
-export const TitleBar = styled.div`
-      width: 100vw;
-      background-color: #333333;
-      height: 25px;
-      display: flex;
-      align-items: center;
-`
-
-export const Title = styled.h4`
-      width: 100%;
-      justify-content: center;
-      display: flex;
-      align-items: center;
-`
-
 export const MainFrame = styled.div`
   width: 100%;
   max-height: 85%;
