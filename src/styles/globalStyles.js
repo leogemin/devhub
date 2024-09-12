@@ -32,6 +32,10 @@ const GlobalStyles = createGlobalStyle`
       body {
             background-color: #1a1a1aE5;
       }
+
+      input {
+            cursor: text;
+      }
 `
 
 export default GlobalStyles

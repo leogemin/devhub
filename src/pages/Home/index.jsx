@@ -10,7 +10,7 @@ const Home = () => {
     let newWindow = new WebviewWindow('popup', {
       url: '/addApp',
       title: 'Adicionar Aplicativo/Pasta',
-      height: 440,
+      height: 200,
       width: 500,
       resizable: false,
       decorations: false,
