@@ -12,19 +12,20 @@ export const Container = styled.div`
 
 export const MainFrame = styled.div`
   width: 100%;
-  max-height: 85%;
+  height: 85%;
+  
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding-right: 8px;
   gap: 10px;
 
   overflow-y: auto;
-
 `
 
 export const Apps = styled.div`
       /* background-color: #7a7a7a; */
       aspect-ratio: 4 / 4;
+      height: 84.4px;
 
       display: flex;
       flex-direction: column;

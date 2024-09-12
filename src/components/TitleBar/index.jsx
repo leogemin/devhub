@@ -4,16 +4,22 @@ import {
   Nav,
   Title,
   Close,
-  MainArea
+  MainArea,
+  Minimize
 } from './styles.js'
 
 const TitleBar = () => {
-  const handleClose = () => {
-    appWindow.minimize();
+
+  const handleMin = () => {
+    appWindow.minimize()
   };
 
+  const handleClose = () => {
+    appWindow.close()
+  }
+
   const handleDrag = () => {
-    appWindow.startDragging();
+    appWindow.startDragging()
   }
 
   return (
@@ -21,7 +27,8 @@ const TitleBar = () => {
       <MainArea onMouseDown={handleDrag}>
         <Title>appHub</Title>  
       </MainArea>
-      <Close onClick={handleClose}>-</Close>
+      <Minimize onClick={handleMin}>-</Minimize>
+      <Close onClick={handleClose}>×</Close>
     </Nav>
   );
 }
