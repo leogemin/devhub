@@ -9,10 +9,15 @@ export const Nav = styled.div`
 `
 
 export const Title = styled.h4`
-      width: 100%;
-      justify-content: center;
+
+
+`
+
+export const MainArea = styled.div`
       display: flex;
+      justify-content: center;
       align-items: center;
+      width: 100%;
 `
 
 export const Close = styled.button`

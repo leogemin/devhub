@@ -3,17 +3,24 @@ import React from 'react'
 import {
   Nav,
   Title,
-  Close
+  Close,
+  MainArea
 } from './styles.js'
 
 const TitleBar = () => {
   const handleClose = () => {
-    appWindow.close();
+    appWindow.minimize();
   };
+
+  const handleDrag = () => {
+    appWindow.startDragging();
+  }
 
   return (
     <Nav>
-      <Title>appHub</Title>
+      <MainArea onMouseDown={handleDrag}>
+        <Title>appHub</Title>  
+      </MainArea>
       <Close onClick={handleClose}>-</Close>
     </Nav>
   );
