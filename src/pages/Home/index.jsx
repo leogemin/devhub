@@ -40,7 +40,7 @@ const Home = () => {
           {/** 
            * Apps
            */}
-          <Apps onDoubleClick={addAppWindow}>
+          <Apps onClick={addAppWindow}>
             <AppIcon src={squareIcon}/>
           </Apps>
         </MainFrame>
