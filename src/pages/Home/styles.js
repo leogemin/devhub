@@ -37,13 +37,35 @@ export const Apps = styled.div`
       &:hover {
         background-color: rgba(110, 180, 255, .3);
       }
+
+      &:focus {
+        background-color: rgba(110, 180, 255, .3);
+        border: 1px dotted #d3d3d3;
+      }
 `
 
 export const AppIcon = styled.img`
-width: 50%;
+  width: 50%;
 `
 
-export const AppName = styled.h5`
-  text-align: center;
-  font-weight: normal;
+export const Footer = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 20px;
+  width: 100%;
+  font-size: 12px;
+`
+
+export const Options = styled.button`
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  padding: 3px 8px;
+
+  &:hover {
+    background-color: rgba(110, 180, 255, .3);
+  }
 `

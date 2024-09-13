@@ -1,5 +1,5 @@
 # AppHub
-Gerenciador de pastas, arquivos e apps para desktop
+Gerenciador de pastas, repositórios e code snnipets
 
 ___
 

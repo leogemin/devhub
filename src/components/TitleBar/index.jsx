@@ -25,7 +25,7 @@ const TitleBar = () => {
   return (
     <Nav>
       <MainArea onMouseDown={handleDrag}>
-        <Title>appHub</Title>  
+        <Title>devHub</Title>  
       </MainArea>
       <Minimize onClick={handleMin}>-</Minimize>
       <Close onClick={handleClose}>×</Close>

@@ -1,16 +1,18 @@
-import React from 'react'
-import { invoke } from '@tauri-apps/api/tauri'
+import React, { useState } from 'react'
 import { WebviewWindow } from '@tauri-apps/api/window'
-import { AppIcon, AppName, Apps, Container, MainFrame } from './styles.js'
+import { AppIcon, Apps, Container, Footer, MainFrame, Options } from './styles.js'
 import squareIcon from '/plus-square.svg'
+import Block from '../../components/Block/index.jsx'
 
 const Home = () => {
+
+  const [footerVisible, setFooterVisible] = useState(false)
 
   const addAppWindow = () => {
     let newWindow = new WebviewWindow('popup', {
       url: '/addApp',
       title: 'Adicionar Aplicativo/Pasta',
-      height: 200,
+      height: 230,
       width: 500,
       resizable: false,
       decorations: false,
@@ -21,22 +23,11 @@ const Home = () => {
     })
   }
 
-  const handleOpen = async (path) => {
-    try {
-      await invoke('open_path', { path })
-    } catch (error) {
-      console.error('Error opening path:', error);
-    }
-  }
-
   return (
     <>
       <Container>
         <MainFrame>
-          <Apps onDoubleClick={() => handleOpen("C:/Users/leona/Desktop/dev")}>
-            <AppIcon src="/folder.ico"/>
-            <AppName>Dev</AppName>
-          </Apps>
+          <Block appName="Dev" path="D:/dev" onFocus={() => setFooterVisible(true)} onBlur={() => setFooterVisible(false)}/>
           {/** 
            * Apps
            */}
@@ -44,6 +35,18 @@ const Home = () => {
             <AppIcon src={squareIcon}/>
           </Apps>
         </MainFrame>
+        <Footer style={{ visibility: footerVisible ? 'visible' : 'hidden'}}>
+          <Options>
+            Rename
+          </Options>
+          <Options>
+            Open With VSCode
+          </Options>
+          <Options>
+            Terminal
+          </Options>
+          
+        </Footer>
       </Container>
     </>
   )

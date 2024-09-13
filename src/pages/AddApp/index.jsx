@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonFile, Container, Entradas, FileDiv, FormFrame, InputBox } from './styles'
+import { AddBtn, ButtonFile, Container, Entradas, FileDiv, FormFrame, InputBox } from './styles'
 
 
 const AddApp = () => {
@@ -20,7 +20,11 @@ const AddApp = () => {
             <Entradas style={{display: 'none'}} id="filePath" type="file"/>
             <ButtonFile htmlFor="filePath">Search</ButtonFile>
           </FileDiv>
-        </InputBox> 
+        </InputBox>
+
+        <InputBox>
+          <AddBtn>Adicionar ao Hub</AddBtn>
+        </InputBox>
       </FormFrame>
     </Container>
   )

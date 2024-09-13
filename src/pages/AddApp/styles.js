@@ -53,3 +53,20 @@ export const FileDiv = styled.div`
             width: 100%;
       }
 `
+
+export const AddBtn = styled.button`
+      background: none;
+      outline: none;
+      border: 2px solid #d3d3d3;
+      border-radius: 6px;
+      appearance: none;
+      padding: 5px;
+      font-size: 16px;
+
+      transition: .05s all ease;
+
+      &:hover {
+            background-color: #d3d3d3;
+            color: #1a1a1a;
+      }
+`
