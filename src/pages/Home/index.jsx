@@ -5,7 +5,6 @@ import squareIcon from '/plus-square.svg'
 import Block from '../../components/Block/index.jsx'
 
 const Home = () => {
-
   const [footerVisible, setFooterVisible] = useState(false)
 
   const addAppWindow = () => {
@@ -19,7 +18,7 @@ const Home = () => {
     })
 
     newWindow.once('tauri://close-requested', () => {
-      newWindow.close();
+      newWindow.close()
     })
   }
 
@@ -31,11 +30,13 @@ const Home = () => {
           {/** 
            * Apps
            */}
+
           <Apps onClick={addAppWindow}>
-            <AppIcon src={squareIcon}/>
+            <AppIcon src={squareIcon} />
           </Apps>
         </MainFrame>
-        <Footer style={{ visibility: footerVisible ? 'visible' : 'hidden'}}>
+        
+        <Footer style={{visibility: footerVisible ? "visible" : 'hidden'}}>
           <Options>
             Rename
           </Options>
@@ -45,7 +46,6 @@ const Home = () => {
           <Options>
             Terminal
           </Options>
-          
         </Footer>
       </Container>
     </>
