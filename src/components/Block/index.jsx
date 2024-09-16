@@ -3,7 +3,7 @@ import { invoke } from '@tauri-apps/api/tauri';
 import { Apps, AppIcon, AppName } from './styles';
 import FooterComponent from './FooterComponent';
 
-const Block = ({ appName, path }) => {
+const Block = ({ appName, path, ico }) => {
   const [footerVisible, setFooterVisible] = useState(false);
 
   const handleOpen = async () => {
@@ -17,7 +17,7 @@ const Block = ({ appName, path }) => {
   return (
     <div onFocus={() => setFooterVisible(true)}>
       <Apps tabIndex={0} onDoubleClick={handleOpen}>
-        <AppIcon src="/folder.ico" />
+        <AppIcon src={ico} />
         <AppName>{appName}</AppName>
       </Apps>
 

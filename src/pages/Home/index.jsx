@@ -4,6 +4,8 @@ import { AppIcon, Apps, Container, MainFrame } from './styles.js'
 import squareIcon from '/plus-square.svg'
 import Block from '../../components/Block/index.jsx'
 
+import data from "../../assets/objects.json"
+
 const Home = () => {
   const addAppWindow = () => {
     let newWindow = new WebviewWindow('popup', {
@@ -24,15 +26,14 @@ const Home = () => {
     <>
       <Container>
         <MainFrame>
+          {data.objects.map((object, index) => (
           <Block
-            name="block"
-            appName="Dev"
-            path="D:/dev"
-          />          
-          {/** 
-           * Apps
-           */}
-
+            key={index}
+            appName={object.name}
+            path={object.path}
+            ico={object.icon}
+          />
+          ))}
           <Apps onClick={addAppWindow}>
             <AppIcon src={squareIcon} />
           </Apps>
