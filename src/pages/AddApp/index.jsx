@@ -1,24 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AddBtn, ButtonFile, Container, Entradas, FileDiv, FormFrame, InputBox } from './styles'
-
+import { dialog } from '@tauri-apps/api'
 
 const AddApp = () => {
+
+  const [folderPath, setFolderPath] = useState('')
+
+  const handleSearchFolder = async () => {
+    const path = await dialog.open({
+      directory: true, 
+      multiple: false, 
+    });
+
+    if (path) {
+      setFolderPath(path.replaceAll("\\", "/")); 
+    }
+  }
+
   return (
     <Container>
       <FormFrame>
         <InputBox>
           <h5>Nome do App</h5>
-          <Entradas type="text" />
+          <Entradas type="text" required/>
         </InputBox>
         
         <InputBox>
           <h5>Caminho do App/Pasta</h5>
 
           <FileDiv>
-            <Entradas type="text"/> 
+            <Entradas value={folderPath} type="text" required/> 
             
-            <Entradas style={{display: 'none'}} id="filePath" type="file"/>
-            <ButtonFile htmlFor="filePath">Search</ButtonFile>
+            <ButtonFile onClick={handleSearchFolder}>Search</ButtonFile>
           </FileDiv>
         </InputBox>
 

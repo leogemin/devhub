@@ -10,10 +10,13 @@ export const Container = styled.div`
       width: 100vw;
 `
 
-export const ButtonFile = styled.label`
+export const ButtonFile = styled.button`
       border: 2px solid #d3d3d3;
       padding: 1px 7px;
       border-radius: 7px;
+
+      font-size: 16px;
+      background: none;
 
       transition: .05s all ease;
 

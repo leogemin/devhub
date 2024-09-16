@@ -1,0 +1,9 @@
+{
+     "objects" : [
+          {
+               "name": "Dev",
+               "path": "D:/dev",
+               "icon": "/folder.ico"
+          }
+     ]
+}
