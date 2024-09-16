@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { WebviewWindow } from '@tauri-apps/api/window'
-import { AppIcon, Apps, Container, Footer, MainFrame, Options } from './styles.js'
+import { AppIcon, Apps, Container, MainFrame } from './styles.js'
 import squareIcon from '/plus-square.svg'
 import Block from '../../components/Block/index.jsx'
 
 const Home = () => {
-  const [footerVisible, setFooterVisible] = useState(false)
-
   const addAppWindow = () => {
     let newWindow = new WebviewWindow('popup', {
       url: '/addApp',
@@ -26,7 +24,11 @@ const Home = () => {
     <>
       <Container>
         <MainFrame>
-          <Block appName="Dev" path="D:/dev" onFocus={() => setFooterVisible(true)} onBlur={() => setFooterVisible(false)}/>
+          <Block
+            name="block"
+            appName="Dev"
+            path="D:/dev"
+          />          
           {/** 
            * Apps
            */}
@@ -35,18 +37,6 @@ const Home = () => {
             <AppIcon src={squareIcon} />
           </Apps>
         </MainFrame>
-        
-        <Footer style={{visibility: footerVisible ? "visible" : 'hidden'}}>
-          <Options>
-            Rename
-          </Options>
-          <Options>
-            Open With VSCode
-          </Options>
-          <Options>
-            Terminal
-          </Options>
-        </Footer>
       </Container>
     </>
   )

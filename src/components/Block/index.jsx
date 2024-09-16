@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { invoke } from '@tauri-apps/api/tauri';
 import { Apps, AppIcon, AppName } from './styles';
+import FooterComponent from './FooterComponent';
 
-const Block = ({ appName, path, onFocus, onBlur }) => {
+const Block = ({ appName, path }) => {
+  const [footerVisible, setFooterVisible] = useState(false);
+
   const handleOpen = async () => {
     try {
       await invoke('open_path', { path });
@@ -12,10 +15,14 @@ const Block = ({ appName, path, onFocus, onBlur }) => {
   };
 
   return (
-    <Apps tabIndex={0} onFocus={onFocus} onDoubleClick={handleOpen} onBlur={onBlur}>
-      <AppIcon src="/folder.ico" />
-      <AppName>{appName}</AppName>
-    </Apps>
+    <div onFocus={() => setFooterVisible(true)}>
+      <Apps tabIndex={0} onDoubleClick={handleOpen}>
+        <AppIcon src="/folder.ico" />
+        <AppName>{appName}</AppName>
+      </Apps>
+
+      <FooterComponent visible={footerVisible} onClose={() => setFooterVisible(false)} />
+    </div>
   );
 };
 

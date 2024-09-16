@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 export const MainFrame = styled.div`
   width: 100%;
-  height: 85%;
+  height: 90%;
   
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -46,26 +46,4 @@ export const Apps = styled.div`
 
 export const AppIcon = styled.img`
   width: 50%;
-`
-
-export const Footer = styled.div`
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  height: 20px;
-  width: 100%;
-  font-size: 12px;
-`
-
-export const Options = styled.button`
-  appearance: none;
-  background: none;
-  border: none;
-  outline: none;
-
-  padding: 3px 8px;
-
-  &:hover {
-    background-color: rgba(110, 180, 255, .3);
-  }
 `
