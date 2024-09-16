@@ -4,7 +4,7 @@ import { AppIcon, Apps, Container, MainFrame } from './styles.js'
 import squareIcon from '/plus-square.svg'
 import Block from '../../components/Block/index.jsx'
 
-import data from "../../data/objects.json"
+import data from "../../assets/objects.json"
 
 const Home = () => {
   const addAppWindow = () => {
