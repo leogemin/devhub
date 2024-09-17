@@ -26,7 +26,7 @@ struct NovoObjeto {
 fn add_object(novo_objeto: NovoObjeto) -> Result<(), String> {
   match add_object_logic(novo_objeto) {
     Ok(_) => Ok(()),
-    Err(e) => Err(format!("Failed to add object: {}", e))
+    Err(e) => Err(format!("Falha ao adicionar objeto: {}", e))
   }
 }
 
