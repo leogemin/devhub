@@ -23,7 +23,6 @@ export const MainFrame = styled.div`
 `
 
 export const Apps = styled.div`
-      /* background-color: #7a7a7a; */
       aspect-ratio: 4 / 4;
       height: 84.4px;
 
@@ -40,7 +39,7 @@ export const Apps = styled.div`
 
       &:focus {
         background-color: rgba(110, 180, 255, .3);
-        border: 1px dotted #d3d3d3;
+        border: 1px dotted var(--lightGray);
       }
 `
 

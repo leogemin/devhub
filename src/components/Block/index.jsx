@@ -6,7 +6,7 @@ import FooterComponent from './FooterComponent'
 const Block = ({ appName, path, ico }) => {
   const [footerVisible, setFooterVisible] = useState(false);
 
-  const handleOpen = async () => {
+  const handleOpen = async () => { // chama função tauri pra abrir pastas e apps
     try {
       await invoke('open_path', { path });
     } catch (error) {

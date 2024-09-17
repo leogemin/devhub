@@ -4,10 +4,10 @@ import { AppIcon, Apps, Container, MainFrame } from './styles.js'
 import squareIcon from '/plus-square.svg'
 import Block from '../../components/Block/index.jsx'
 
-import data from "../../assets/objects.json"
+import data from "../../../src-tauri/assets/objects.json"
 
 const Home = () => {
-  const addAppWindow = () => {
+  const addAppWindow = () => { // telinha de adicionar novo app
     let newWindow = new WebviewWindow('popup', {
       url: '/addApp',
       title: 'Adicionar Aplicativo/Pasta',
@@ -26,7 +26,7 @@ const Home = () => {
     <>
       <Container>
         <MainFrame>
-          {data.objects.map((object, index) => (
+          {data.map((object, index) => (
           <Block
             key={index}
             appName={object.name}

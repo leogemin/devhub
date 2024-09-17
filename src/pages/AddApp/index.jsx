@@ -4,8 +4,7 @@ import { dialog, path } from '@tauri-apps/api'
 import { invoke } from '@tauri-apps/api/tauri'
 
 const AddApp = () => {
-
-  const [folderPath, setFolderPath] = useState('')
+  const [folderPath, setFolderPath] = useState('') // tudo em react é mais dificil então useState
 
   const handleSearchFolder = async () => {
     const path = await dialog.open({
@@ -14,26 +13,27 @@ const AddApp = () => {
     });
 
     if (path) {
-      setFolderPath(path.replaceAll("\\", "/")); 
+      setFolderPath(path.replaceAll("\\", "/")); // troca as contrabarra por barra na hora do set
     }
   }
 
 
   const handleAddApp = async () => {
-    const novo_objeto = {
-      name: document.getElementById("name").value,
+    const novoObjeto = { // Camelcase pq o tauri converte o snake_case em camel pra conversar com o front (????)
+      name: document.getElementById("name").value + "",
       path: folderPath,
       icon: "/folder.ico"
     };
-  
-    console.log("Serialized object:", JSON.stringify(novo_objeto)); // Log serialized object for debugging
-  
+    
+    // console.log(novoObjeto)
+
     try {
-      await invoke('add_object', { novo_objeto });
+      await invoke('add_object', { novoObjeto }); 
     } catch (error) {
       console.error('Error adding element:', error);
     }
-  };
+  }
+  
 
   return (
     <Container>

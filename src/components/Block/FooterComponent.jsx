@@ -2,7 +2,7 @@ import React from 'react';
 import onClickOutside from 'react-onclickoutside';
 import { Footer, Options } from './styles';
 
-class FooterComponent extends React.Component {
+class FooterComponent extends React.Component { // ISSO DEU MUUUITO TRABALHO PQP
   handleClickOutside = () => {
     this.props.onClose();
   };

@@ -11,6 +11,10 @@ const GlobalStyles = createGlobalStyle`
       }
 
       :root {
+            --darkGray: #1a1a1a; // cor do fundo
+            --mediumGray: #333333; // cor da titlebar + footer
+            --lightGray: #d3d3d3; // não sei aonde tem isso
+
             overflow-x: hidden;
             overflow-y: hidden;
 
@@ -30,7 +34,7 @@ const GlobalStyles = createGlobalStyle`
       }
 
       body {
-            background-color: #1a1a1aE5;
+            background-color: #1a1a1aE5
       }
 
       input {

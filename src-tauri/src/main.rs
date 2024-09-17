@@ -10,6 +10,10 @@ use serde_json::{Value, from_str, to_string_pretty};
 use std::fs::{OpenOptions, File};
 use std::io::{Read, Write};
 
+
+/*** Funções para adição de nova pasta/app ***/
+
+// Estrutura do objeto json
 #[derive(Serialize, Deserialize, Debug)]
 struct NovoObjeto {
   name: String,
@@ -17,21 +21,21 @@ struct NovoObjeto {
   icon: String
 }
 
+// Função tauri para chamada do invoke
 #[tauri::command]
 fn add_object(novo_objeto: NovoObjeto) -> Result<(), String> {
-  println!("Received object: {:?}", novo_objeto); // Log received object for debugging
-
   match add_object_logic(novo_objeto) {
     Ok(_) => Ok(()),
     Err(e) => Err(format!("Failed to add object: {}", e))
   }
 }
 
+// Função lógica
 fn add_object_logic(novo_objeto: NovoObjeto) -> Result<(), Box<dyn std::error::Error>> {
   let mut file = OpenOptions::new()
       .read(true)
       .write(true)
-      .open("../../src/assets/objects.json")?;
+      .open("C:/Users/leona/Desktop/dev/personal/Projects/apphub/src-tauri/assets/objects.json")?;
 
   let mut conteudo = String::new();
   file.read_to_string(&mut conteudo)?;
@@ -45,18 +49,22 @@ fn add_object_logic(novo_objeto: NovoObjeto) -> Result<(), Box<dyn std::error::E
   }
 
   let json_string = to_string_pretty(&json)?;
-  let mut file = File::create("../../src/assets/objects.json")?;
+  let mut file = File::create("C:/Users/leona/Desktop/dev/personal/Projects/apphub/src-tauri/assets/objects.json")?;
   file.write_all(json_string.as_bytes())?;
 
   Ok(())
 }
+/***    -----------------------------    ***/
 
+// Função abrir app/pasta (usada no onDoubleClick do componente Block)
 #[tauri::command]
 fn open_path(app_handle: tauri::AppHandle, path: String) -> Result<(), String> {
   open(&app_handle.shell_scope(), path, None)
       .map_err(|e| format!("Failed to open: {}", e))
 }
 
+
+// Main
 fn main() {
   tauri::Builder::default()
       .invoke_handler(tauri::generate_handler![add_object, open_path])

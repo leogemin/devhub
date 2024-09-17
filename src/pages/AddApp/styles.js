@@ -11,7 +11,7 @@ export const Container = styled.div`
 `
 
 export const ButtonFile = styled.button`
-      border: 2px solid #d3d3d3;
+      border: 2px solid var(--lightGray);
       padding: 1px 7px;
       border-radius: 7px;
 
@@ -21,8 +21,8 @@ export const ButtonFile = styled.button`
       transition: .05s all ease;
 
       &:hover {
-            color: #1a1a1a;
-            background-color: #d3d3d3;
+            color: var(--darkGray);
+            background-color: var(--lightGray);
       }
 `
 
@@ -60,7 +60,7 @@ export const FileDiv = styled.div`
 export const AddBtn = styled.button`
       background: none;
       outline: none;
-      border: 2px solid #d3d3d3;
+      border: 2px solid var(--lightGray);
       border-radius: 6px;
       appearance: none;
       padding: 5px;
@@ -69,7 +69,7 @@ export const AddBtn = styled.button`
       transition: .05s all ease;
 
       &:hover {
-            background-color: #d3d3d3;
-            color: #1a1a1a;
+            background-color: var(--lightGray);
+            color: var(--darkGray);
       }
 `

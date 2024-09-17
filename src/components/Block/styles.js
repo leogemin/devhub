@@ -18,7 +18,7 @@ export const Apps = styled.div`
 
       &:focus {
         background-color: rgba(110, 180, 255, .3);
-        border: 1px dotted #d3d3d3;
+        border: 1px dotted var(--lightGray);
       }
 `
 
@@ -41,7 +41,7 @@ export const Footer = styled.div`
   bottom: 0;
   left: 0;
   padding: 5px 10px;
-  background-color: #1a1a1a;
+  background-color: var(--mediumGray);
 `
 
 export const Options = styled.button`
