@@ -16,10 +16,12 @@ export const MainFrame = styled.div`
   
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   padding-right: 8px;
   gap: 10px;
 
   overflow-y: auto;
+  overflow-x: hidden;
 `
 
 export const Apps = styled.div`
