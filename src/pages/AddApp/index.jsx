@@ -41,8 +41,6 @@ const AddApp = () => {
       path: folderPath,
       icon: appIcon
     };
-    
-    // console.log(novoObjeto)
 
     try {
       await invoke('add_object', { novoObjeto }); 
