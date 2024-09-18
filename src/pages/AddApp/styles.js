@@ -12,10 +12,12 @@ export const Container = styled.div`
 
 export const ButtonFile = styled.button`
       border: 2px solid var(--lightGray);
-      padding: 1px 7px;
+      padding: 3px 7px;
       border-radius: 7px;
 
-      font-size: 16px;
+      width: 41%;
+
+      font-size: 14px;
       background: none;
 
       transition: .05s all ease;
@@ -49,7 +51,7 @@ export const Entradas = styled.input`
 
 export const FileDiv = styled.div`
       display: flex;
-      gap: 15px;
+      gap: 10px;
       align-items: center;
 
       & > input {

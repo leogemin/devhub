@@ -35,7 +35,7 @@ fn add_object_logic(novo_objeto: NovoObjeto) -> Result<(), Box<dyn std::error::E
   let mut file = OpenOptions::new()
       .read(true)
       .write(true)
-      .open("C:/Users/leona/Desktop/dev/personal/Projects/apphub/src-tauri/assets/objects.json")?;
+      .open("D:/dev/personal/Projects/devhub/src-tauri/assets/objects.json")?;
 
   let mut conteudo = String::new();
   file.read_to_string(&mut conteudo)?;
@@ -49,7 +49,7 @@ fn add_object_logic(novo_objeto: NovoObjeto) -> Result<(), Box<dyn std::error::E
   }
 
   let json_string = to_string_pretty(&json)?;
-  let mut file = File::create("C:/Users/leona/Desktop/dev/personal/Projects/apphub/src-tauri/assets/objects.json")?;
+  let mut file = File::create("D:/dev/personal/Projects/devhub/src-tauri/assets/objects.json")?;
   file.write_all(json_string.as_bytes())?;
 
   Ok(())
