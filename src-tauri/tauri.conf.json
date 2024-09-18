@@ -6,7 +6,7 @@
     "distDir": "../"
   },
   "package": {
-    "productName": "apphub",
+    "productName": "devhub",
     "version": "0.1.0"
   },
   "tauri": {
@@ -65,7 +65,7 @@
         "transparent": true,
         "decorations": false,
         "resizable": false,
-        "title": "apphub",
+        "title": "devhub",
         "width": 405
       }
     ]
