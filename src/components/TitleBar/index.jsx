@@ -5,7 +5,8 @@ import {
   Menu,
   Close,
   MainArea,
-  Minimize
+  Minimize,
+  TitleLabel
 } from './styles.js'
 import { useNavigate } from "react-router-dom";
 
@@ -23,14 +24,20 @@ const TitleBar = () => {
     appWindow.startDragging()
   }
 
+  const navigate = useNavigate()
+
   return (
     <Nav>
-      <MainArea onMouseDown={handleDrag}>
-        <h4>devHub</h4>
+      <MainArea>
+        <TitleLabel onClick={() => navigate("/")}>
+          <h4>dev</h4>
+          <h4>Hub</h4>
+        </TitleLabel>
         <Menu>
-          <li onClick={() => useNavigate("/arquivos")}>Arquivos</li>
-          <li onClick={() => useNavigate("/codeframes")}>Code Frames</li>
-        </Menu>  
+          <li onClick={() => navigate("/arquivos")}>Arquivos</li>
+          <li onClick={() => navigate("/codeframes")}>Code Frames</li>
+        </Menu>
+        <div style={{flexGrow: 1, height: '25px'}} onMouseDown={handleDrag}></div>  
       </MainArea>
       <Minimize onClick={handleMin}>-</Minimize>
       <Close onClick={handleClose}>×</Close>

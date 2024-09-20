@@ -3,15 +3,13 @@ import styled, { keyframes } from "styled-components";
 const FadeIn = keyframes`
   0% {
     opacity: 0;
-    transform: translate(0, 10%)
+    transform: translateY(5%)
   }
   50% {
-    opacity: 0.3;
-    transform: translate(0, 5%)
+    transform: translateY(0)
   }
   100% {
     opacity: 1;
-    transform: translate(0, 0)
   }
 `
 

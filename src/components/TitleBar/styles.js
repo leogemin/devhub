@@ -22,6 +22,23 @@ export const Nav = styled.div`
       }
 `
 
+export const TitleLabel = styled.div`
+      display: flex;
+      padding: 0 10px;
+
+      h4 {
+            transition: .3s all ease;
+      }
+
+      h4:last-child {
+            color: yellow;
+      }
+
+      &:hover > h4{
+            color: gold;
+      }
+`
+
 export const Menu = styled.ul`
       display: flex;
       gap: 3px;
@@ -43,11 +60,9 @@ export const Menu = styled.ul`
 
 export const MainArea = styled.div`
       display: flex;
-      padding: 0 10px;
       justify-content: flex-start;
       align-items: center;
       width: 100%;
-      gap: 8px;
 `
 
 export const Minimize = styled.button`
