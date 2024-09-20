@@ -22,9 +22,23 @@ export const Nav = styled.div`
       }
 `
 
-export const Title = styled.h4`
+export const Menu = styled.ul`
+      display: flex;
+      gap: 3px;
+      
+      li {
+            text-wrap: nowrap;
+            font-size: 0.8rem;
+            list-style: none;
+            padding:1px 5px;
+            border-radius: 5px;
 
-
+            transition: .05s ease-in-out;
+            &:hover {
+                  background-color: #a9a9a9;
+                  color: var(--darkGray);
+            }
+      }
 `
 
 export const MainArea = styled.div`
@@ -33,6 +47,7 @@ export const MainArea = styled.div`
       justify-content: flex-start;
       align-items: center;
       width: 100%;
+      gap: 8px;
 `
 
 export const Minimize = styled.button`

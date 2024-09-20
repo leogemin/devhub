@@ -1,10 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
-import Home from './pages/Home/index.jsx'
+import Arquivos from './pages/Arquivos'
 import GlobalStyles from './styles/globalStyles.js'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import AddApp from './pages/AddApp/index.jsx'
+import AddApp from './pages/AddApp'
+import Home from './pages/Home'
+import CodeFrames from './pages/CodeFrames'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home/>
+      },
+      {
+        path: "/arquivos",
+        element: <Arquivos/>
+      },
+      {
+        path: "/codeframes",
+        element: <CodeFrames/>
       },
       {
         path: "/addApp",
