@@ -1,4 +1,17 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+const FadeIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(5%)
+  }
+  50% {
+    transform: translateY(0)
+  }
+  100% {
+    opacity: 1;
+  }
+`
 
 export const Container = styled.div`
       display: flex;
@@ -8,43 +21,33 @@ export const Container = styled.div`
       padding: 0 15px 15px 15px;
       height: 100vh;
       width: 100vw;
+      gap: 20px;
+      animation: ${FadeIn} 1s linear;
 `
 
-export const MainFrame = styled.div`
-  width: 100%;
-  height: 90%;
-  
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  padding-right: 8px;
-  gap: 10px;
+export const Box = styled.div`
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     border-radius: 10px;
+     background-color: #2a2a2aEF;
+     box-shadow: 0px 0px 5px #000;
+     width: 200px;
+     height: 150px;
 
-  overflow-y: auto;
-  overflow-x: hidden;
-`
+     transition: .2s ease-in-out;
 
-export const Apps = styled.div`
-      aspect-ratio: 4 / 4;
-      height: 84.4px;
+     &:hover {
+          background-color: #1a1a1aEF;
+       }
+     
+     img {
+          height: 50px;
+     }
 
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
+     h2 {
 
-      transition: .05s all ease;
-
-      &:hover {
-        background-color: rgba(110, 180, 255, .3);
-      }
-
-      &:focus {
-        background-color: rgba(110, 180, 255, .3);
-        border: 1px dotted var(--lightGray);
-      }
-`
-
-export const AppIcon = styled.img`
-  width: 50%;
+     }
 `

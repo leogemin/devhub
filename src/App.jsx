@@ -5,8 +5,8 @@ import TitleBar from './components/TitleBar'
 const App = () => {
   return (
     <>
-      <TitleBar />
-      <Outlet/>
+      <TitleBar hasMenu={true}/>
+      <Outlet />
     </>
   )
 }

@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
       * {
             margin: 0;
+            padding: 0;
             box-sizing: border-box;
             color: white;
             font-family: "SUSE", sans-serif;
@@ -39,6 +40,9 @@ const GlobalStyles = createGlobalStyle`
 
       input {
             cursor: text;
+      }
+      a {
+            text-decoration: none
       }
 `
 

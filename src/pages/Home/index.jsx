@@ -1,45 +1,23 @@
 import React from 'react'
-import { WebviewWindow } from '@tauri-apps/api/window'
-import { AppIcon, Apps, Container, MainFrame } from './styles.js'
-import squareIcon from '/plus-square.svg'
-import Block from '../../components/Block/index.jsx'
-
-import data from "../../../src-tauri/assets/objects.json"
+import FolderIco from "/folder.ico"
+import ScisorIco from "/scisor.png"
+import { Box, Container } from './styles'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
-  const addAppWindow = () => { // telinha de adicionar novo app
-    let newWindow = new WebviewWindow('popup', {
-      url: '/addApp',
-      title: 'Adicionar Aplicativo/Pasta',
-      height: 230,
-      width: 500,
-      resizable: false,
-      decorations: false,
-    })
-
-    newWindow.once('tauri://close-requested', () => {
-      newWindow.close()
-    })
-  }
+  const navigate = useNavigate()
 
   return (
-    <>
-      <Container>
-        <MainFrame>
-          {data.map((object, index) => (
-          <Block
-            key={index}
-            appName={object.name}
-            path={object.path}
-            ico={object.icon}
-          />
-          ))}
-          <Apps onClick={addAppWindow}>
-            <AppIcon src={squareIcon} />
-          </Apps>
-        </MainFrame>
-      </Container>
-    </>
+    <Container>
+      <Box onClick={() => navigate('/arquivos')}>
+        <img src={FolderIco} />
+        <h2>Arquivos</h2>
+      </Box>
+      <Box onClick={() => navigate('/codeframes')}>
+        <img src={ScisorIco} />
+        <h2>CodeFrames</h2>
+      </Box>
+    </Container>
   )
 }
 
