@@ -10,11 +10,11 @@ import {
 } from './styles.js'
 import { useNavigate } from "react-router-dom";
 
-const TitleBar = () => {
+const TitleBar = ({ hasMenu }) => {
 
   const handleMin = () => {
     appWindow.minimize()
-  };
+  }
 
   const handleClose = () => {
     appWindow.close()
@@ -29,11 +29,11 @@ const TitleBar = () => {
   return (
     <Nav>
       <MainArea>
-        <TitleLabel onClick={() => navigate("/")}>
+        <TitleLabel onClick={hasMenu ? () => navigate("/") : null} >
           <h4>dev</h4>
           <h4>Hub</h4>
         </TitleLabel>
-        <Menu>
+        <Menu style={{display: hasMenu ? "flex" : "none"}}>
           <li onClick={() => navigate("/arquivos")}>Arquivos</li>
           <li onClick={() => navigate("/codeframes")}>Code Frames</li>
         </Menu>

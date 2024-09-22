@@ -25,12 +25,14 @@ const router = createBrowserRouter([
         path: "/codeframes",
         element: <CodeFrames/>
       },
-      {
-        path: "/addApp",
-        element: <AddApp/>
-      }
+      
     ],
+  },
+  {
+    path: "/addApp",
+    element: <AddApp/>
   }
+  
 ]) 
 
 createRoot(document.getElementById('root')).render(

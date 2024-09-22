@@ -3,6 +3,7 @@ import { AddBtn, ButtonFile, Container, Entradas, FileDiv, FormFrame, InputBox }
 import { dialog, path } from '@tauri-apps/api'
 import { invoke } from '@tauri-apps/api/tauri'
 import { appWindow } from '@tauri-apps/api/window'
+import TitleBar from '../../components/TitleBar'
 
 const AddApp = () => {
   const [folderPath, setFolderPath] = useState('') // tudo em react é mais dificil então useState
@@ -53,6 +54,8 @@ const AddApp = () => {
   
 
   return (
+    <>
+    <TitleBar hasMenu={false}/>
     <Container>
       <FormFrame>
         <InputBox>
@@ -76,6 +79,7 @@ const AddApp = () => {
         </InputBox>
       </FormFrame>
     </Container>
+    </>
   )
 }
 

@@ -22,7 +22,7 @@ pub fn add_object(novo_objeto: NovoObjeto) -> Result<(), String> {
 
 // Função lógica
 fn add_object_logic(novo_objeto: NovoObjeto) -> Result<(), Box<dyn std::error::Error>> {
-      let path: &str = "C:/Users/leona/Desktop/dev/personal/Projects/devhub/src-tauri/assets/objects.json";
+      let path: &str = "D:/dev/personal/Projects/devhub/src-tauri/assets/objects.json";
       let mut file = OpenOptions::new()
             .read(true)
             .write(true)

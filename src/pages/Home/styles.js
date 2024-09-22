@@ -41,7 +41,7 @@ export const Box = styled.div`
 
      &:hover {
           background-color: #1a1a1aEF;
-     }
+       }
      
      img {
           height: 50px;
