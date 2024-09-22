@@ -1,5 +1,5 @@
 # AppHub
-Gerenciador de pastas, repositórios e code snnipets
+Gerenciador de pastas, repositórios e code snippets
 
 ___
 
