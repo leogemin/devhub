@@ -30,12 +30,16 @@ class FooterComponent extends React.Component { // ISSO DEU MUUUITO TRABALHO PQP
     }
   }
 
+  handleRenameApp = async () => {
+    const appName = this.props.appName
+  }
+
   render() {
     const { visible, path } = this.props
 
     return (
       <Footer style={{ visibility: visible ? 'visible' : 'hidden' }}>
-        <Options>Rename</Options>
+        <Options onClick={this.handleRenameApp}>Rename</Options>
         <Options onClick={this.handleOpenVscode}>Open With VSCode</Options>
         <Options onClick={this.handleOpenTerminal}>Terminal</Options>
       </Footer>

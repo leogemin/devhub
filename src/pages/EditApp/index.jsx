@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import TitleBar from '../../components/TitleBar'
 import { appWindow } from '@tauri-apps/api/window'
-import { AddBtn, ButtonFile, Container, Entradas, FileDiv, FormFrame, InputBox } from './styles'
+import { AddBtn, Container, Entradas, FormFrame, InputBox } from './styles'
 
-const EditApp = () => {
+const EditApp = ({ appName }) => {
      return (
           <>
           <TitleBar hasMenu={false}/>
@@ -11,22 +11,11 @@ const EditApp = () => {
             <FormFrame>
               <InputBox>
                 <h5>Nome do App</h5>
-                <Entradas id="name" type="text" required/>
-              </InputBox>
-              
-              <InputBox>
-                <h5>Caminho do App/Pasta</h5>
-      
-                <FileDiv>
-                  <Entradas value={folderPath} type="text" required readOnly/> 
-                  
-                  <ButtonFile onClick={handleSearchFolder}>Search Folder</ButtonFile>
-                  <ButtonFile onClick={handleSearchFile}>Search File</ButtonFile>
-                </FileDiv>
+                <Entradas id="name" type="text" value={ appName } required/>
               </InputBox>
       
               <InputBox>
-                <AddBtn onClick={handleAddApp}>Adicionar ao Hub</AddBtn>
+                <AddBtn onClick={handleEditName}>Alterar Nome</AddBtn>
               </InputBox>
             </FormFrame>
           </Container>

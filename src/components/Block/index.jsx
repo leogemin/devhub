@@ -21,7 +21,7 @@ const Block = ({ appName, path, ico }) => {
         <AppName>{appName}</AppName>
       </Apps>
 
-      <FooterComponent path={path} visible={footerVisible} onClose={() => setFooterVisible(false)} />
+      <FooterComponent appName={appName} path={path} visible={footerVisible} onClose={() => setFooterVisible(false)} />
     </div>
   )
 }
