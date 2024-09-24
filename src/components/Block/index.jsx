@@ -8,9 +8,9 @@ const Block = ({ appName, path, ico }) => {
 
   const handleOpen = async () => { // chama função tauri pra abrir pastas e apps
     try {
-      await invoke('open_path', { path });
+      await invoke('open_path', { path })
     } catch (error) {
-      console.error('Error opening path:', error);
+      console.error('Caminho não encontrado:', error)
     }
   }
 
@@ -21,7 +21,7 @@ const Block = ({ appName, path, ico }) => {
         <AppName>{appName}</AppName>
       </Apps>
 
-      <FooterComponent visible={footerVisible} onClose={() => setFooterVisible(false)} />
+      <FooterComponent path={path} visible={footerVisible} onClose={() => setFooterVisible(false)} />
     </div>
   )
 }
