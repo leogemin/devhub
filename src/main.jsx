@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AddApp from './pages/AddApp'
 import Home from './pages/Home'
 import CodeFrames from './pages/CodeFrames'
+import EditApp from './pages/EditApp/index.jsx'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/addApp",
     element: <AddApp/>
+  },
+  {
+    path: "/editApp",
+    element: <EditApp/>
   }
   
 ]) 

@@ -1,9 +1,13 @@
 import React from 'react'
 import TitleBar from '../../components/TitleBar'
-import { appWindow } from '@tauri-apps/api/window'
 import { AddBtn, Container, Entradas, FormFrame, InputBox } from './styles'
 
 const EditApp = ({ appName }) => {
+
+    const handleEditName = () => {
+      
+    }
+
      return (
           <>
           <TitleBar hasMenu={false}/>

@@ -41,7 +41,7 @@ const AddApp = () => {
       name: document.getElementById("name").value + "",
       path: folderPath,
       icon: appIcon
-    };
+    }
 
     try {
       await invoke('add_object', { novoObjeto }); 

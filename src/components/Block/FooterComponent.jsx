@@ -2,6 +2,7 @@ import React from 'react'
 import { invoke } from '@tauri-apps/api/tauri'
 import onClickOutside from 'react-onclickoutside'
 import { Footer, Options } from './styles'
+import { WebviewWindow } from '@tauri-apps/api/window'
 
 class FooterComponent extends React.Component { // ISSO DEU MUUUITO TRABALHO PQP
   handleClickOutside = () => {
@@ -32,6 +33,19 @@ class FooterComponent extends React.Component { // ISSO DEU MUUUITO TRABALHO PQP
 
   handleRenameApp = async () => {
     const appName = this.props.appName
+
+    let newWindow = new WebviewWindow('popup', {
+      url: '/editApp',
+      title: 'Editar Aplicativo/Pasta',
+      height: 230,
+      width: 500,
+      resizable: false,
+      decorations: false,
+    })
+
+    newWindow.once('tauri://close-requested', () => {
+      newWindow.close()
+    })
   }
 
   render() {
